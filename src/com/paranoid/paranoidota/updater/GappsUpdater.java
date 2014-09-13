@@ -26,7 +26,6 @@ import com.paranoid.paranoidota.Utils;
 import com.paranoid.paranoidota.Version;
 import com.paranoid.paranoidota.helpers.SettingsHelper;
 import com.paranoid.paranoidota.updater.server.BbServer;
-import com.paranoid.paranoidota.updater.server.GooServer;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -48,8 +47,7 @@ public class GappsUpdater extends Updater {
 
     public GappsUpdater(Context context, boolean fromAlarm) {
         super(context, new Server[] {
-                new BbServer(), new GooServer(context, false)
-        }, fromAlarm);
+                new BbServer() }, fromAlarm);
 
         mRomVersion = new Version(RomUpdater.getVersionString(context));
 

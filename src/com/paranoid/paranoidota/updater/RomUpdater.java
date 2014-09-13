@@ -24,7 +24,6 @@ import android.content.Context;
 import com.paranoid.paranoidota.R;
 import com.paranoid.paranoidota.Utils;
 import com.paranoid.paranoidota.Version;
-import com.paranoid.paranoidota.updater.server.LegacyServer;
 import com.paranoid.paranoidota.updater.server.HsbServer;
 import com.paranoid.paranoidota.updater.server.PaServer;
 
@@ -45,8 +44,7 @@ public class RomUpdater extends Updater {
 
     public RomUpdater(Context context, boolean fromAlarm) {
         super(context, new Server[] {
-                new PaServer(),  new HsbServer(), new LegacyServer(context, true)
-        }, fromAlarm);
+                new PaServer(),  new HsbServer() }, fromAlarm);
     }
 
     @Override
